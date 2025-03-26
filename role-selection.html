@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Role</title>
+    <link rel="stylesheet" href="role-selectionStyles.css">
+       <script src="baseUrl.js"></script>
+    <style>
+        /* Simple styling for the continue button */
+        #continueButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f0f0f0;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block; /* Center button */
+            
+            margin-left: auto; /* Center button */
+            margin-right: auto; /* Center button */
+        }
+
+        #continueButton:hover {
+            background-color: #e0e0e0; /* Lighter on hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="mainbox">
+        <h2>Tell us how you want to use Askit</h2>
+        <h3>You can always change within the app</h3>
+        <br><br>
+        <div>
+            <label for="serviceProvider" id="serviceProviderLabel">
+                <input type="checkbox" id="serviceProvider" onchange="handleCheckboxChange(this)">
+                <h7>Service Provider</h7><br>
+                <p>Start earning by completing tasks</p>
+            </label>
+        </div>
+        
+        <div>
+            <label for="serviceReceiver" id="serviceReceiverLabel">
+                <input type="checkbox" id="serviceReceiver" onchange="handleCheckboxChange(this)">
+                <h7>Service Receiver</h7>
+            </label>
+            <p>Getting things done, post tasks</p>
+        </div>
+
+        <!-- Continue button -->
+        <button id="continueButton" onclick="continueToNextPage()">Continue</button>
+    </div>
+
+    <script>
+        // Get username from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+
+        // Function to handle checkbox change and allow only one to be selected
+        function handleCheckboxChange(checkbox) {
+            const serviceProviderCheckbox = document.getElementById('serviceProvider');
+            const serviceReceiverCheckbox = document.getElementById('serviceReceiver');
+
+            // Ensure only one checkbox is selected at a time
+            if (checkbox.id === 'serviceProvider' && checkbox.checked) {
+                serviceReceiverCheckbox.checked = false;
+            } else if (checkbox.id === 'serviceReceiver' && checkbox.checked) {
+                serviceProviderCheckbox.checked = false;
+            }
+        }
+
+        // Function to redirect to the next page based on selected role
+        function continueToNextPage() {
+            if (document.getElementById('serviceProvider').checked) {
+                window.location.href = `${BASE_URL}viewtask.html?username=${username}&role=provider`;
+            } else if (document.getElementById('serviceReceiver').checked) {
+                window.location.href = `${BASE_URL}reciverIndex.html?username=${username}&role=receiver`;
+            }
+        }
+    </script>
+</body>
+</html>

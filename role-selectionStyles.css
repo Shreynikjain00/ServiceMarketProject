@@ -1,0 +1,186 @@
+/* Global settings */
+/* Global settings */
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+   color: #ffffff; /* White text */
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 188, 212, 0.5); /* Reduced glow effect */
+}
+
+h1 {
+    font-size: 3rem; /* Increased font size */
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 2rem; /* Increased font size */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 14px; /* Slightly larger paragraph text */
+    color: #e0e0e0;
+}
+
+/* Button styling */
+#continueButton {
+    display: block; 
+    margin: 20px auto; 
+    padding: 12px 24px; /* Slightly larger padding */
+    font-size: 18px; /* Larger font size */
+    background-color: #00bcd4; /* Cyan background */
+    color: #121212;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 188, 212, 0.4); /* Subtle glow effect */
+}
+
+#continueButton:hover {
+    background-color: #00a8c1; /* Darker cyan on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.6); /* Slightly brighter glow */
+}
+
+/* Container settings */
+div {
+    max-width: 530px;
+    width: 83%;
+    padding: 20px;
+    background-color: #252525;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+    margin: 27px auto;
+    border: 2px solid #00bcd4; /* Cyan border */
+}
+
+#mainbox {
+    max-width: 530px;
+    width: 83%;
+    background-color: #252525;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+    height: 80%;
+    border: 2px solid #00bcd4; /* Cyan border */
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 12px;
+    font-size: 1.1rem; /* Slightly larger font size */
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #b0b0b0;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00bcd4; /* Cyan outline on focus */
+    box-shadow: 0 0 4px rgba(0, 188, 212, 0.5); /* Reduced glow effect */
+}
+
+button {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 1.1rem; /* Slightly larger font size */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 188, 212, 0.4); /* Subtle glow */
+}
+
+button:hover {
+    background-color: #00a8c1;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.5); /* Reduced glow effect */
+}
+
+/* Profile section */
+#userProfile {
+    margin-top: 20px;
+}
+
+#userProfile p {
+    font-size: 1.3rem; /* Slightly larger profile text */
+    color: #00bcd4; /* Cyan-accented profile text */
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 188, 212, 0.5); /* Reduced glow effect */
+}
+
+/* Responsive design for tablets and smaller screens */
+@media (max-width: 768px) {
+    div {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    input {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* Responsive design for mobile phones */
+@media (max-width: 480px) {
+    div {
+        padding: 12px;
+        max-width: 95%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
